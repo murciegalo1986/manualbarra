@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Brand Guidelines — Barra Central</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,400&display=swap" rel="stylesheet">
+<style>
+:root{--cream:#f5f0e8;--cream2:#ede6d6;--tobacco:#1a1510;--tobacco2:#2e2518;--red:#c8360a;--gold:#b07810;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+body{background:#d0c8bc;font-family:'Lato',sans-serif;}
+.page{width:794px;min-height:1123px;margin:0 auto 8px;position:relative;overflow:hidden;background:var(--cream);}
+
+/* PORTADA */
+#p-portada{background:var(--tobacco);display:flex;flex-direction:column;justify-content:space-between;padding:64px 64px 56px;}
+.portada-top{display:flex;justify-content:space-between;}
+.portada-tag{font-size:9px;letter-spacing:.35em;text-transform:uppercase;color:var(--gold);font-weight:700;}
+.portada-ver{font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:rgba(245,240,232,.3);}
+.portada-center{display:flex;flex-direction:column;align-items:center;justify-content:center;flex:1;padding:40px 0;}
+.portada-logo{width:260px;}
+.portada-bottom{border-top:1px solid rgba(245,240,232,.1);padding-top:28px;display:flex;justify-content:space-between;align-items:flex-end;}
+.portada-title{font-size:9px;letter-spacing:.4em;text-transform:uppercase;color:rgba(245,240,232,.25);font-family:'Lato',sans-serif;}
+.portada-claim{font-family:'Bebas Neue',sans-serif;font-size:52px;line-height:.88;color:var(--cream);text-align:right;}
+.portada-claim em{color:var(--red);font-style:normal;}
+
+/* SHARED HEADER */
+.page-header{display:flex;justify-content:space-between;align-items:center;padding:28px 48px 0;margin-bottom:36px;}
+.sec-num{font-family:'Bebas Neue',sans-serif;font-size:72px;color:var(--red);opacity:.12;line-height:1;}
+.sec-info{text-align:right;}
+.sec-label-top{font-size:8px;letter-spacing:.3em;text-transform:uppercase;color:var(--red);font-weight:700;display:block;margin-bottom:4px;}
+.sec-info h2{font-family:'Bebas Neue',sans-serif;font-size:32px;letter-spacing:.04em;line-height:1;}
+.page-footer{position:absolute;bottom:24px;left:48px;right:48px;display:flex;justify-content:space-between;align-items:center;border-top:1px solid rgba(26,21,16,.08);padding-top:10px;}
+.page-footer span{font-size:8px;letter-spacing:.2em;text-transform:uppercase;color:rgba(26,21,16,.28);}
+
+/* LOGO PAGE */
+.logo-grid{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:2px;margin:0 48px;height:500px;}
+.logo-cell{display:flex;flex-direction:column;align-items:center;justify-content:center;position:relative;padding:24px;}
+.logo-cell img{width:130px;}
+.logo-cell.on-tobacco{background:var(--tobacco);}
+.logo-cell.on-cream{background:var(--cream2);}
+.logo-cell.on-red{background:var(--red);}
+.logo-cell.on-gold{background:var(--gold);}
+.cell-label{position:absolute;bottom:12px;left:14px;font-size:8px;letter-spacing:.18em;text-transform:uppercase;font-weight:700;}
+.logo-cell.on-tobacco .cell-label{color:rgba(245,240,232,.28);}
+.logo-cell.on-cream .cell-label{color:rgba(26,21,16,.28);}
+.logo-cell.on-red .cell-label{color:rgba(245,240,232,.4);}
+.logo-cell.on-gold .cell-label{color:rgba(26,21,16,.32);}
+.logo-cell.on-cream img,.logo-cell.on-gold img{mix-blend-mode:multiply;}
+.logo-rules{display:flex;gap:8px;margin:12px 48px 0;}
+.logo-rule{flex:1;background:#fff8f5;border-top:2px solid var(--red);padding:10px 12px;}
+.logo-rule .rule-icon{font-size:14px;margin-bottom:4px;display:block;}
+.logo-rule p{font-size:9px;color:rgba(26,21,16,.55);line-height:1.5;}
+
+/* PALETA */
+#p-paleta{background:var(--tobacco);}
+#p-paleta .sec-num{color:var(--cream);opacity:.1;}
+#p-paleta .sec-label-top{color:var(--gold);}
+#p-paleta .sec-info h2{color:var(--cream);}
+.palette-row{display:flex;margin:0 48px;height:360px;gap:2px;}
+.swatch{display:flex;flex-direction:column;flex:1;}
+.swatch.primary{flex:1.5;}
+.swatch-color{flex:1;}
+.swatch-info{padding:12px 14px;background:rgba(245,240,232,.04);}
+.swatch-name{font-family:'Bebas Neue',sans-serif;font-size:15px;color:var(--cream);letter-spacing:.06em;display:block;margin-bottom:2px;}
+.swatch-hex{font-family:monospace;font-size:9px;color:rgba(245,240,232,.32);display:block;margin-bottom:4px;}
+.swatch-role{font-size:9px;color:rgba(245,240,232,.38);line-height:1.45;}
+.palette-note{margin:16px 48px 0;padding:14px 18px;background:rgba(245,240,232,.04);border-left:3px solid var(--gold);}
+.palette-note p{font-size:10px;color:rgba(245,240,232,.45);line-height:1.6;}
+#p-paleta .page-footer span{color:rgba(245,240,232,.2);}
+#p-paleta .page-footer{border-color:rgba(245,240,232,.08);}
+
+/* TIPOGRAFÍA */
+.tipo-hero{margin:0 48px 24px;background:var(--tobacco);padding:36px 44px;}
+.tipo-hero-label{font-size:8px;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:8px;display:block;}
+.tipo-display-big{font-family:'Bebas Neue',sans-serif;font-size:76px;color:var(--cream);line-height:.88;letter-spacing:.03em;}
+.tipo-display-big em{color:var(--red);font-style:normal;}
+.tipo-body-sample{font-family:'Lato',sans-serif;font-size:12px;color:rgba(245,240,232,.48);line-height:1.7;margin-top:18px;max-width:460px;}
+.tipo-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;margin:0 48px;}
+.tipo-card{padding:18px 22px;background:var(--cream2);}
+.tipo-card-label{font-size:8px;letter-spacing:.28em;text-transform:uppercase;color:var(--red);font-weight:700;margin-bottom:8px;}
+.tipo-card h3{font-family:'Bebas Neue',sans-serif;font-size:20px;margin-bottom:3px;}
+.family-mono{font-family:monospace;font-size:9px;color:rgba(26,21,16,.32);margin-bottom:12px;display:block;}
+.scale-row{display:flex;justify-content:space-between;padding:5px 0;border-bottom:1px solid rgba(26,21,16,.07);font-size:10px;color:rgba(26,21,16,.68);}
+.scale-row span:last-child{font-family:monospace;font-size:9px;color:rgba(26,21,16,.38);}
+
+/* ELEMENTOS */
+.elementos-intro{margin:0 48px 20px;font-size:11px;color:rgba(26,21,16,.55);line-height:1.6;max-width:560px;}
+.elementos-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin:0 48px;}
+.elem-card{background:var(--cream2);padding:20px 18px;min-height:190px;display:flex;flex-direction:column;justify-content:space-between;}
+.elem-preview{flex:1;display:flex;align-items:center;justify-content:center;margin-bottom:14px;}
+.elem-label{font-size:8px;letter-spacing:.25em;text-transform:uppercase;color:var(--red);font-weight:700;display:block;margin-bottom:3px;}
+.elem-desc{font-size:9.5px;color:rgba(26,21,16,.48);line-height:1.5;}
+.double-line{display:flex;flex-direction:column;gap:5px;width:110px;}
+.double-line span{display:block;height:2px;background:var(--gold);}
+.ghost-letter{font-family:'Bebas Neue',sans-serif;font-size:80px;color:transparent;-webkit-text-stroke:1.5px var(--tobacco);opacity:.12;line-height:1;}
+.ticker-strip{background:var(--red);padding:7px 0;overflow:hidden;white-space:nowrap;font-family:'Bebas Neue',sans-serif;font-size:11px;letter-spacing:.15em;color:var(--cream);width:180px;}
+.grain-block{width:110px;height:70px;background:var(--tobacco);position:relative;overflow:hidden;}
+.grain-block::after{content:'';position:absolute;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.14'/%3E%3C/svg%3E");mix-blend-mode:overlay;}
+.accent-demo{display:flex;gap:8px;align-items:center;}
+.accent-block{width:36px;height:70px;background:var(--red);}
+.accent-text{font-family:'Bebas Neue',sans-serif;font-size:24px;line-height:1.05;color:var(--tobacco);}
+.dot-pattern{display:grid;grid-template-columns:repeat(5,1fr);gap:5px;}
+.dot-pattern span{width:7px;height:7px;border-radius:50%;background:var(--tobacco);opacity:.14;display:block;}
+
+/* FOTOGRAFÍA */
+#p-foto{background:var(--tobacco2);}
+#p-foto .sec-num{color:var(--cream);opacity:.1;}
+#p-foto .sec-label-top{color:var(--gold);}
+#p-foto .sec-info h2{color:var(--cream);}
+.foto-intro{margin:0 48px 20px;font-size:11px;color:rgba(245,240,232,.45);line-height:1.6;}
+.foto-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin:0 48px;}
+.foto-principle{padding:18px 16px;background:rgba(245,240,232,.04);border-top:2px solid var(--gold);}
+.foto-icon{font-size:18px;margin-bottom:8px;display:block;}
+.foto-principle h4{font-family:'Bebas Neue',sans-serif;font-size:15px;color:var(--cream);letter-spacing:.06em;margin-bottom:5px;}
+.foto-principle p{font-size:9.5px;color:rgba(245,240,232,.42);line-height:1.5;}
+.tono-paleta{display:flex;margin:16px 48px 0;height:50px;}
+.tono-chip{flex:1;position:relative;}
+.tono-chip span{position:absolute;bottom:-16px;left:0;right:0;text-align:center;font-size:7.5px;letter-spacing:.12em;text-transform:uppercase;color:rgba(245,240,232,.28);}
+.moodboard{display:grid;grid-template-columns:2fr 1fr 1fr;grid-template-rows:1fr 1fr;gap:2px;margin:16px 48px 0;height:240px;}
+.moodboard-img{overflow:hidden;}
+.moodboard-img img{width:100%;height:100%;object-fit:cover;display:block;}
+.moodboard-img.span2{grid-row:span 2;}
+.foto-do-dont{display:grid;grid-template-columns:1fr 1fr;gap:2px;margin:12px 48px 0;}
+.do-col,.dont-col{padding:14px 16px;}
+.do-col{background:rgba(176,120,16,.08);border-top:2px solid var(--gold);}
+.dont-col{background:rgba(200,54,10,.06);border-top:2px solid var(--red);}
+.do-col h4{font-family:'Bebas Neue',sans-serif;font-size:13px;color:var(--gold);margin-bottom:8px;}
+.dont-col h4{font-family:'Bebas Neue',sans-serif;font-size:13px;color:var(--red);margin-bottom:8px;}
+.do-col li,.dont-col li{font-size:9.5px;color:rgba(245,240,232,.45);line-height:1.6;margin-bottom:3px;list-style:none;padding-left:12px;position:relative;}
+.do-col li::before{content:'✓';color:var(--gold);position:absolute;left:0;}
+.dont-col li::before{content:'✗';color:var(--red);position:absolute;left:0;}
+#p-foto .page-footer span{color:rgba(245,240,232,.2);}
+#p-foto .page-footer{border-color:rgba(245,240,232,.08);}
+
+/* APLICACIONES */
+.mockup-web{margin:0 48px 14px;background:var(--tobacco);border-radius:4px 4px 0 0;overflow:hidden;}
+.mockup-bar{background:rgba(245,240,232,.06);padding:7px 14px;display:flex;align-items:center;gap:8px;}
+.mockup-dots{display:flex;gap:5px;}
+.mockup-dots span{width:7px;height:7px;border-radius:50%;background:rgba(245,240,232,.15);}
+.mockup-url{flex:1;background:rgba(245,240,232,.06);border-radius:3px;padding:3px 10px;font-size:8.5px;color:rgba(245,240,232,.22);font-family:monospace;}
+.mockup-content{padding:16px 22px;display:flex;align-items:center;justify-content:space-between;}
+.mockup-nav{display:flex;gap:14px;}
+.mockup-nav span{font-size:8px;letter-spacing:.18em;text-transform:uppercase;color:rgba(245,240,232,.32);}
+.mockup-logo-text{font-family:'Bebas Neue',sans-serif;font-size:16px;color:var(--cream);letter-spacing:.15em;}
+.mockup-logo-text em{color:var(--red);font-style:normal;}
+.mockup-cta{background:var(--red);color:var(--cream);padding:5px 14px;font-size:9px;letter-spacing:.18em;text-transform:uppercase;font-family:'Bebas Neue',sans-serif;border-radius:2px;}
+.color-aplicacion{display:flex;gap:14px;margin:12px 48px 16px;align-items:center;}
+.ca-item{display:flex;align-items:center;gap:6px;font-size:9.5px;color:rgba(26,21,16,.55);}
+.ca-dot{width:20px;height:20px;border-radius:3px;flex-shrink:0;}
+.rrss-label{margin:0 48px 10px;font-size:8px;letter-spacing:.25em;text-transform:uppercase;color:var(--red);font-weight:700;}
+.rrss-specs{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;margin:0 48px;}
+.rrss-card{background:var(--cream2);text-align:center;overflow:hidden;}
+.rrss-head{background:var(--tobacco);padding:9px;font-family:'Bebas Neue',sans-serif;font-size:12px;color:var(--cream);letter-spacing:.08em;}
+.rrss-body{padding:10px 8px;}
+.rrss-dim{font-family:'Bebas Neue',sans-serif;font-size:17px;color:var(--tobacco);display:block;margin-bottom:3px;}
+.rrss-desc{font-size:8.5px;color:rgba(26,21,16,.42);line-height:1.4;}
+
+/* NO HACER */
+#p-nohac{background:#faf7f2;}
+.nohac-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin:0 48px;}
+.nohac-card{background:#fff;border-top:2px solid rgba(200,54,10,.22);padding:16px 14px;}
+.nohac-icon{font-size:16px;margin-bottom:7px;display:block;}
+.nohac-card h4{font-size:10.5px;font-weight:900;color:var(--red);margin-bottom:5px;font-family:'Lato',sans-serif;}
+.nohac-card p{font-size:9px;color:rgba(26,21,16,.52);line-height:1.5;}
+
+/* CONTRAPORTADA */
+#p-contra{background:var(--red);display:flex;flex-direction:column;justify-content:space-between;padding:64px;}
+.contra-label{font-size:9px;letter-spacing:.35em;text-transform:uppercase;color:rgba(245,240,232,.5);font-weight:700;margin-bottom:22px;display:block;}
+.contra-top h2{font-family:'Bebas Neue',sans-serif;font-size:72px;color:var(--cream);line-height:.88;}
+.contra-top h2 em{font-style:normal;color:var(--tobacco);}
+.contra-center{display:flex;justify-content:center;align-items:center;flex:1;padding:32px 0;}
+.contra-center img{width:160px;filter:brightness(0) invert(1);opacity:.12;}
+.contra-bottom{border-top:1px solid rgba(245,240,232,.2);padding-top:26px;display:grid;grid-template-columns:repeat(3,1fr);gap:28px;}
+.contra-col-label{font-size:8px;letter-spacing:.25em;text-transform:uppercase;color:rgba(245,240,232,.38);font-weight:700;display:block;margin-bottom:5px;}
+.contra-col-val{font-size:11.5px;color:rgba(245,240,232,.82);line-height:1.5;}
+</style>
+</head>
+<body>
+
+<!-- 01 PORTADA -->
+<div class="page" id="p-portada">
+  <div class="portada-top">
+    <span class="portada-tag">Brand Guidelines</span>
+    <span class="portada-ver">v1.0 — 2025</span>
+  </div>
+  <div class="portada-center">
+    <img class="portada-logo" src="barra_central_logo_transparent_1.png" alt="Barra Central Logo">
+  </div>
+  <div class="portada-bottom">
+    <span class="portada-title">Manual de Identidad Visual</span>
+    <div class="portada-claim">BARRA<br><em>CENTRAL</em></div>
+  </div>
+</div>
+
+<!-- 02 LOGOTIPO -->
+<div class="page" id="p-logo">
+  <div class="page-header">
+    <div class="sec-num">02</div>
+    <div class="sec-info">
+      <span class="sec-label-top">Identidad Visual</span>
+      <h2>Logotipo</h2>
+    </div>
+  </div>
+  <div class="logo-grid">
+    <div class="logo-cell on-tobacco">
+      <img src="barra_central_logo_transparent_1.png" alt="Logo">
+      <span class="cell-label">Principal — fondo tabaco</span>
+    </div>
+    <div class="logo-cell on-cream">
+      <img src="barra_central_logo_transparent_1.png" alt="Logo">
+      <span class="cell-label">Alternativo — fondo crema</span>
+    </div>
+    <div class="logo-cell on-red">
+      <img src="barra_central_logo_transparent_1.png" alt="Logo">
+      <span class="cell-label">Evento — fondo rojo</span>
+    </div>
+    <div class="logo-cell on-gold">
+      <img src="barra_central_logo_transparent_1.png" alt="Logo">
+      <span class="cell-label">Especial — gold edition</span>
+    </div>
+  </div>
+  <div class="logo-rules">
+    <div class="logo-rule">
+      <span class="rule-icon">📐</span>
+      <p><strong>Zona de protección</strong><br>Espacio libre mínimo = altura de la «B» en todos sus lados.</p>
+    </div>
+    <div class="logo-rule">
+      <span class="rule-icon">📏</span>
+      <p><strong>Tamaño mínimo</strong><br>Digital: 160px. Impresión: 35mm. Nunca menor.</p>
+    </div>
+    <div class="logo-rule">
+      <span class="rule-icon">🚫</span>
+      <p><strong>Sin modificaciones</strong><br>No distorsionar, rotar, ni agregar efectos al logo.</p>
+    </div>
+    <div class="logo-rule">
+      <span class="rule-icon">🎨</span>
+      <p><strong>Solo estos fondos</strong><br>Tabaco, crema, rojo o dorado. Sin fondos fotográficos.</p>
+    </div>
+  </div>
+  <div class="page-footer">
+    <span>Barra Central — Brand Guidelines</span>
+    <span>02 / Logotipo</span>
+  </div>
+</div>
+
+<!-- 03 PALETA -->
+<div class="page" id="p-paleta">
+  <div class="page-header">
+    <div class="sec-num">03</div>
+    <div class="sec-info">
+      <span class="sec-label-top">Identidad Visual</span>
+      <h2>Paleta de Colores</h2>
+    </div>
+  </div>
+  <div class="palette-row">
+    <div class="swatch primary">
+      <div class="swatch-color" style="background:#f5f0e8;"></div>
+      <div class="swatch-info">
+        <span class="swatch-name">Crema</span>
+        <span class="swatch-hex">#f5f0e8</span>
+        <span class="swatch-role">Fondo principal. Base de toda la identidad.</span>
+      </div>
+    </div>
+    <div class="swatch primary">
+      <div class="swatch-color" style="background:#1a1510;"></div>
+      <div class="swatch-info">
+        <span class="swatch-name">Tabaco</span>
+        <span class="swatch-hex">#1a1510</span>
+        <span class="swatch-role">Texto primario y fondos oscuros.</span>
+      </div>
+    </div>
+    <div class="swatch primary">
+      <div class="swatch-color" style="background:#c8360a;"></div>
+      <div class="swatch-info">
+        <span class="swatch-name">Chile Red</span>
+        <span class="swatch-hex">#c8360a</span>
+        <span class="swatch-role">Acento principal. CTAs y énfasis.</span>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background:#b07810;"></div>
+      <div class="swatch-info">
+        <span class="swatch-name">Dorado</span>
+        <span class="swatch-hex">#b07810</span>
+        <span class="swatch-role">Acento premium. Precios y detalles.</span>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background:#ede6d6;"></div>
+      <div class="swatch-info">
+        <span class="swatch-name">Crema 2</span>
+        <span class="swatch-hex">#ede6d6</span>
+        <span class="swatch-role">Cards y secciones alternas.</span>
+      </div>
+    </div>
+  </div>
+  <div class="palette-note">
+    <p>Chile Red jamás sobre Dorado. El blanco puro (#ffffff) no es parte de esta paleta. En fondos oscuros el texto siempre va en Crema. El Dorado es acento, nunca fondo dominante.</p>
+  </div>
+  <div class="page-footer">
+    <span>Barra Central — Brand Guidelines</span>
+    <span>03 / Paleta</span>
+  </div>
+</div>
+
+<!-- 04 TIPOGRAFÍA -->
+<div class="page" id="p-tipo">
+  <div class="page-header">
+    <div class="sec-num">04</div>
+    <div class="sec-info">
+      <span class="sec-label-top">Identidad Visual</span>
+      <h2>Tipografía</h2>
+    </div>
+  </div>
+  <div class="tipo-hero">
+    <span class="tipo-hero-label">Display — Bebas Neue</span>
+    <div class="tipo-display-big">BARRA<br><em>CENTRAL</em></div>
+    <div class="tipo-body-sample">Un lugar donde el tiempo se mide en conversaciones, no en horas. La carta cambia, la calidad nunca.</div>
+  </div>
+  <div class="tipo-grid">
+    <div class="tipo-card">
+      <div class="tipo-card-label">Titulares & Display</div>
+      <h3>Bebas Neue</h3>
+      <span class="family-mono">'Bebas Neue', sans-serif</span>
+      <div class="scale-row"><span>Hero</span><span>clamp(4rem,10vw,9rem)</span></div>
+      <div class="scale-row"><span>H1 Sección</span><span>clamp(2.4rem,5vw,4.2rem)</span></div>
+      <div class="scale-row"><span>H2 Tarjeta</span><span>1.8rem</span></div>
+      <div class="scale-row"><span>Label / eyebrow</span><span>0.68rem · tracking .3em</span></div>
+    </div>
+    <div class="tipo-card">
+      <div class="tipo-card-label">Cuerpo & Interfaz</div>
+      <h3>Lato</h3>
+      <span class="family-mono">'Lato', sans-serif · 400 / 700 / 900</span>
+      <div class="scale-row"><span>Párrafo base</span><span>1rem · line-height 1.65</span></div>
+      <div class="scale-row"><span>Párrafo grande</span><span>1.1rem · italic citas</span></div>
+      <div class="scale-row"><span>UI small</span><span>0.85–0.9rem</span></div>
+      <div class="scale-row"><span>Caption / micro</span><span>0.65–0.72rem</span></div>
+    </div>
+  </div>
+  <div class="page-footer">
+    <span>Barra Central — Brand Guidelines</span>
+    <span>04 / Tipografía</span>
+  </div>
+</div>
+
+<!-- 05 ELEMENTOS GRÁFICOS -->
+<div class="page" id="p-elementos">
+  <div class="page-header">
+    <div class="sec-num">05</div>
+    <div class="sec-info">
+      <span class="sec-label-top">Identidad Visual</span>
+      <h2>Elementos Gráficos</h2>
+    </div>
+  </div>
+  <p class="elementos-intro">Set de recursos visuales de apoyo que refuerzan la identidad en cada pieza. Siempre dentro de la paleta y tipografía definidas.</p>
+  <div class="elementos-grid">
+    <div class="elem-card">
+      <div class="elem-preview">
+        <div class="double-line"><span></span><span></span></div>
+      </div>
+      <span class="elem-label">Líneas Divisorias</span>
+      <p class="elem-desc">Doble línea en dorado. Elemento estructural del logo, replicable en secciones y separadores de marca.</p>
+    </div>
+    <div class="elem-card">
+      <div class="elem-preview">
+        <div class="ghost-letter">BC</div>
+      </div>
+      <span class="elem-label">Ghost Letters</span>
+      <p class="elem-desc">Letras en outline, opacidad muy baja. Crean profundidad y atmósfera sin competir con el contenido.</p>
+    </div>
+    <div class="elem-card">
+      <div class="elem-preview">
+        <div class="ticker-strip">&nbsp;MAR — BURGER + CERVEZA &nbsp;·&nbsp; MIÉ — RAMAZZOTTI $3.500 &nbsp;·&nbsp;</div>
+      </div>
+      <span class="elem-label">Ticker Strip</span>
+      <p class="elem-desc">Banda en Chile Red con texto Bebas Neue en crema. Para promos y anuncios de temporada.</p>
+    </div>
+    <div class="elem-card">
+      <div class="elem-preview">
+        <div class="grain-block"></div>
+      </div>
+      <span class="elem-label">Overlay de Grano</span>
+      <p class="elem-desc">Textura noise sobre fondos oscuros. Opacity 3–5%. Agrega profundidad cinematográfica a la pieza.</p>
+    </div>
+    <div class="elem-card">
+      <div class="elem-preview">
+        <div class="accent-demo">
+          <div class="accent-block"></div>
+          <div class="accent-text">TAPAS<br>BAR</div>
+        </div>
+      </div>
+      <span class="elem-label">Bloque de Acento</span>
+      <p class="elem-desc">Rectángulo rojo como marcador lateral. Acompaña titulares y tarjetas de contenido destacado.</p>
+    </div>
+    <div class="elem-card">
+      <div class="elem-preview">
+        <div class="dot-pattern">
+          <span></span><span></span><span></span><span></span><span></span>
+          <span></span><span></span><span></span><span></span><span></span>
+          <span></span><span></span><span></span><span></span><span></span>
+          <span></span><span></span><span></span><span></span><span></span>
+          <span></span><span></span><span></span><span></span><span></span>
+        </div>
+      </div>
+      <span class="elem-label">Grid de Puntos</span>
+      <p class="elem-desc">Patrón de puntos en tabaco con opacidad baja. Relleno decorativo en fondos crema claros.</p>
+    </div>
+  </div>
+  <div class="page-footer">
+    <span>Barra Central — Brand Guidelines</span>
+    <span>05 / Elementos Gráficos</span>
+  </div>
+</div>
+
+<!-- 06 FOTOGRAFÍA -->
+<div class="page" id="p-foto">
+  <div class="page-header">
+    <div class="sec-num">06</div>
+    <div class="sec-info">
+      <span class="sec-label-top">Identidad Visual</span>
+      <h2>Tono Fotográfico</h2>
+    </div>
+  </div>
+  <p class="foto-intro">Las imágenes son el 60% de la primera impresión. Toda fotografía debe sentirse cálida, cinética y auténtica — nunca clínica, genérica ni sobreproducida.</p>
+  <div class="foto-grid">
+    <div class="foto-principle">
+      <span class="foto-icon">🌅</span>
+      <h4>Luz Cálida</h4>
+      <p>Dorada, de atardecer, vela o barra. Temperatura 3200–4500K. Sin flash duro ni luz fría.</p>
+    </div>
+    <div class="foto-principle">
+      <span class="foto-icon">🎯</span>
+      <h4>Encuadre Intencional</h4>
+      <p>Primer plano en detalles del plato. Planos abiertos para ambiente. Ángulos a 45°. Sin cenital genérico.</p>
+    </div>
+    <div class="foto-principle">
+      <span class="foto-icon">🎞️</span>
+      <h4>Postproducción Sutil</h4>
+      <p>Tono cálido, sombras levantadas, vibrancia moderada. Grano fino permitido. Sin filtros artificiales.</p>
+    </div>
+  </div>
+  <div class="tono-paleta">
+    <div class="tono-chip" style="background:#d4a96a;"><span>Dorado</span></div>
+    <div class="tono-chip" style="background:#c4835a;"><span>Tierra</span></div>
+    <div class="tono-chip" style="background:#a06040;"><span>Terracota</span></div>
+    <div class="tono-chip" style="background:#8b5e3c;"><span>Cobre</span></div>
+    <div class="tono-chip" style="background:#3d2810;"><span>Umber</span></div>
+    <div class="tono-chip" style="background:#f0e0c8;"><span>Crema</span></div>
+  </div>
+  <div class="moodboard">
+    <div class="moodboard-img span2"><img src="bartender.jpg" alt="Barra Central"></div>
+    <div class="moodboard-img"><img src="coctel.jpg" alt="Cóctel"></div>
+    <div class="moodboard-img"><img src="baos.jpg" alt="Baos"></div>
+  </div>
+  <div class="foto-do-dont">
+    <div class="do-col">
+      <h4>✓ Sí</h4>
+      <ul>
+        <li>Luz de barra y velas como fuente principal</li>
+        <li>Grano fino en postproducción</li>
+        <li>Momentos espontáneos, personas reales</li>
+        <li>Producto como héroe visual claro</li>
+        <li>Guiños costeros sutiles (madera, luz filtrada)</li>
+      </ul>
+    </div>
+    <div class="dont-col">
+      <h4>✗ No</h4>
+      <ul>
+        <li>Flash directo o luz blanca fría</li>
+        <li>Filtros de saturación artificial</li>
+        <li>Poses forzadas o stock photography</li>
+        <li>Azules, verdes saturados o magentas</li>
+        <li>Efectos HDR o tonos dramáticos falsos</li>
+      </ul>
+    </div>
+  </div>
+  <div class="page-footer">
+    <span>Barra Central — Brand Guidelines</span>
+    <span>06 / Fotografía</span>
+  </div>
+</div>
+
+<!-- 07 APLICACIONES -->
+<div class="page" id="p-aplicaciones">
+  <div class="page-header">
+    <div class="sec-num">07</div>
+    <div class="sec-info">
+      <span class="sec-label-top">Aplicaciones</span>
+      <h2>La Marca en el Mundo</h2>
+    </div>
+  </div>
+  <div class="mockup-web">
+    <div class="mockup-bar">
+      <div class="mockup-dots"><span></span><span></span><span></span></div>
+      <div class="mockup-url">barracentral.cl</div>
+    </div>
+    <div class="mockup-content">
+      <div class="mockup-logo-text">BARRA <em>CENTRAL</em></div>
+      <div class="mockup-nav"><span>Carta</span><span>Eventos</span><span>Reservas</span></div>
+      <div class="mockup-cta">Reservar</div>
+    </div>
+  </div>
+  <div class="color-aplicacion">
+    <div class="ca-item"><div class="ca-dot" style="background:var(--cream2);border:1px solid rgba(0,0,0,.1);"></div>Fondo</div>
+    <div class="ca-item"><div class="ca-dot" style="background:var(--tobacco);"></div>Texto & Nav</div>
+    <div class="ca-item"><div class="ca-dot" style="background:var(--red);"></div>CTAs</div>
+    <div class="ca-item"><div class="ca-dot" style="background:var(--gold);"></div>Precios</div>
+  </div>
+  <div class="rrss-label">Especificaciones RRSS</div>
+  <div class="rrss-specs">
+    <div class="rrss-card">
+      <div class="rrss-head">Feed</div>
+      <div class="rrss-body"><span class="rrss-dim">1080×1080</span><div class="rrss-desc">Cuadrado. Producto y promos semanales</div></div>
+    </div>
+    <div class="rrss-card">
+      <div class="rrss-head">Story</div>
+      <div class="rrss-body"><span class="rrss-dim">1080×1920</span><div class="rrss-desc">Zona segura: 250px sup. e inf.</div></div>
+    </div>
+    <div class="rrss-card">
+      <div class="rrss-head">Reels</div>
+      <div class="rrss-body"><span class="rrss-dim">1080×1920</span><div class="rrss-desc">Claim visible en los primeros 2 seg</div></div>
+    </div>
+    <div class="rrss-card">
+      <div class="rrss-head">Portada</div>
+      <div class="rrss-body"><span class="rrss-dim">1200×628</span><div class="rrss-desc">Facebook & preview de enlace web</div></div>
+    </div>
+  </div>
+  <div class="page-footer">
+    <span>Barra Central — Brand Guidelines</span>
+    <span>07 / Aplicaciones</span>
+  </div>
+</div>
+
+<!-- 08 QUÉ NO HACER -->
+<div class="page" id="p-nohac">
+  <div class="page-header">
+    <div class="sec-num">08</div>
+    <div class="sec-info">
+      <span class="sec-label-top">Uso de Marca</span>
+      <h2>Qué No Hacer</h2>
+    </div>
+  </div>
+  <div class="nohac-grid">
+    <div class="nohac-card"><span class="nohac-icon">🚫</span><h4>Fuentes fuera del sistema</h4><p>Nunca Impact, Montserrat ni Arial. Solo Bebas Neue + Lato en cualquier pieza de marca.</p></div>
+    <div class="nohac-card"><span class="nohac-icon">🚫</span><h4>Colores fuera de paleta</h4><p>Prohibido usar azul Instagram, verde WhatsApp o cualquier color no definido en este manual.</p></div>
+    <div class="nohac-card"><span class="nohac-icon">🚫</span><h4>Fondo blanco puro</h4><p>#ffffff nunca como fondo. Barra Central usa crema (#f5f0e8). El blanco puro descontextualiza.</p></div>
+    <div class="nohac-card"><span class="nohac-icon">🚫</span><h4>Logo distorsionado</h4><p>Nunca escalar de forma no proporcional, rotar, ni agregar sombras o efectos al logo.</p></div>
+    <div class="nohac-card"><span class="nohac-icon">🚫</span><h4>Logo sobre fondo complejo</h4><p>No colocar el logo sobre fotografías con mucho detalle que reduzcan su legibilidad.</p></div>
+    <div class="nohac-card"><span class="nohac-icon">🚫</span><h4>Chile Red sobre Dorado</h4><p>Contraste insuficiente y rompe la jerarquía visual. Combinación prohibida sin excepción.</p></div>
+    <div class="nohac-card"><span class="nohac-icon">🚫</span><h4>Lato en mayúsculas</h4><p>La caja alta en cuerpo de texto denota agresividad. Solo Bebas Neue trabaja en mayúsculas.</p></div>
+    <div class="nohac-card"><span class="nohac-icon">🚫</span><h4>Emojis en exceso</h4><p>Máximo 1–2 por pieza y solo si aportan contexto real. El abuso destruye el tono de marca.</p></div>
+    <div class="nohac-card"><span class="nohac-icon">🚫</span><h4>Precios sin formato</h4><p>Siempre «$9.900» con punto de miles. Nunca «9900», «$9,900» ni «9.9k».</p></div>
+  </div>
+  <div class="page-footer">
+    <span>Barra Central — Brand Guidelines</span>
+    <span>08 / Qué No Hacer</span>
+  </div>
+</div>
+
+<!-- 09 CONTRAPORTADA -->
+<div class="page" id="p-contra">
+  <div class="contra-top">
+    <span class="contra-label">Barra Central — Brand Guidelines v1.0 — 2025</span>
+    <h2>REÑACA<br><em>SIEMPRE.</em></h2>
+  </div>
+  <div class="contra-center">
+    <img src="barra_central_logo_transparent_1.png" alt="">
+  </div>
+  <div class="contra-bottom">
+    <div>
+      <span class="contra-col-label">Ubicación</span>
+      <span class="contra-col-val">Reñaca, Viña del Mar<br>Chile</span>
+    </div>
+    <div>
+      <span class="contra-col-label">Reservas</span>
+      <span class="contra-col-val">wokiapp.com/restaurante/<br>barra-central</span>
+    </div>
+    <div>
+      <span class="contra-col-label">Contacto</span>
+      <span class="contra-col-val">+56 9 6314 9513<br>WhatsApp directo</span>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
